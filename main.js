@@ -1,10 +1,11 @@
 let fastCookie = {
     get: function (name) {
         var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-        if (arr = document.cookie.match(reg))
+        if (arr = document.cookie.match(reg)) {
             return unescape(arr[2]);
-        else
+        } else {
             return null;
+        }
     },
     del: function (name) {
         var exp = new Date();
@@ -19,18 +20,18 @@ let fastCookie = {
         exp.setTime(exp.getTime() + strsec * 1);
         document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
 
-        function getsec(src) {
+        function getsec(str) {
             var str1 = str.substring(1, str.length) * 1;
             var str2 = str.substring(0, 1);
-            if (str2 == "s") {
+            if (str2 === "s") {
                 return str1 * 1000;
-            } else if (str2 == "h") {
+            } else if (str2 === "h") {
                 return str1 * 60 * 60 * 1000;
-            } else if (str2 == "d") {
+            } else if (str2 === "d") {
                 return str1 * 24 * 60 * 60 * 1000;
             }
         }
     }
 }
 
-module.exports = fastCookie;
+export default fastCookie;
