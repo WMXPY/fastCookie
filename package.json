@@ -1,8 +1,8 @@
 {
   "name": "fast-cookie",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "get set del cookies",
-  "main": "main.js",
+  "main": "compiled.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
